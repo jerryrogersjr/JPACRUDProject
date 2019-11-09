@@ -21,22 +21,20 @@ USE `carsdb` ;
 DROP TABLE IF EXISTS `cars` ;
 
 CREATE TABLE IF NOT EXISTS `cars` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `make` VARCHAR(45) NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `make` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = utf8;
 
+SET SQL_MODE = '';
+DROP USER IF EXISTS carsdb@localhost;
+SET SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+CREATE USER 'carsdb'@'localhost' IDENTIFIED BY 'carsdb';
+
+GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'carsdb'@'localhost';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
--- -----------------------------------------------------
--- Data for table `cars`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `carsdb`;
-INSERT INTO `cars` (`id`, `make`) VALUES (1, 'chevy');
-
-COMMIT;
-
