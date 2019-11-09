@@ -30,7 +30,6 @@ public class CarsDAOImpl implements CarsDAO {
 
 	@Override
 	public Cars addCar(Cars car) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
