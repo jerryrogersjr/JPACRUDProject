@@ -33,7 +33,7 @@ class CarsTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		car = em.find(Cars.class, 1);
+		car = em.find(Cars.class, 2);
 	}
 
 	@AfterEach
@@ -51,7 +51,9 @@ class CarsTest {
 	@DisplayName("test Cars entity connection")
 	void testCars() {
 //		assertNotNull(car);
-		assertEquals("chevy", car.getMake());
+//		assertEquals("chevrolet chevelle malibu", car.getCar().toLowerCase());
+		assertEquals("US", car.getOrigin().toUpperCase().toString());
+//		car.getCar().toLowerCase().contains("chevrolet");
 	}
 
 }
