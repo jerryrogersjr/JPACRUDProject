@@ -10,9 +10,6 @@ public class Cars {
 
 	// fields
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
 	private String car;
 	private double mpg;
 	private int cylinders;
@@ -22,6 +19,9 @@ public class Cars {
 	private double acceleration;
 	private int year;
 	private String origin;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 
 	// constructors
 

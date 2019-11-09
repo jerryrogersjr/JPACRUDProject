@@ -50,10 +50,20 @@ class CarsTest {
 	@Test
 	@DisplayName("test Cars entity connection")
 	void testCars() {
-//		assertNotNull(car);
-//		assertEquals("chevrolet chevelle malibu", car.getCar().toLowerCase());
-		assertEquals("US", car.getOrigin().toUpperCase().toString());
-//		car.getCar().toLowerCase().contains("chevrolet");
+		assertNotNull(car);
+		car.getCar().toLowerCase().contains("chevrolet");
+		assertEquals(18, car.getMpg());
+		assertEquals(8, car.getCylinders());
+		assertEquals(307, car.getDisplacement());
+		assertEquals(130, car.getHorsepower());
+		assertEquals(3504, car.getWeight());
+		assertEquals(12, car.getAcceleration());
+		assertEquals(70, car.getYear());
+		assertEquals("US", car.getOrigin().toUpperCase());
+		assertEquals(2, car.getId());
+		
 	}
+	
+
 
 }
