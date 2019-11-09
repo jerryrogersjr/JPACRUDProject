@@ -25,7 +25,7 @@ public class CarsControlller {
 		// return "index"; // if using a ViewResolver.
 	}
 
-	@RequestMapping(path = "getFilm.do", method = RequestMethod.GET)
+	@RequestMapping(path = "getCars.do", method = RequestMethod.GET)
 	public ModelAndView getCar(@RequestParam("id") int id) {
 		ModelAndView mv = new ModelAndView();
 		Cars car = carsDAO.findCarById(id);

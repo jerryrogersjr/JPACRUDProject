@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan("com.skilldillery.JPACars")
+@EntityScan("com.skilldillery.jpacars")
 public class CarsApplication {
 
 	public static void main(String[] args) {

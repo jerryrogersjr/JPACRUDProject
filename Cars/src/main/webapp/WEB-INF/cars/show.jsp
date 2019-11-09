@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,14 @@
 </head>
 <body>
 
+	<div>
+		<h3>
+			<strong>Car </strong>${car.car}(Origin : ${car.origin})
+		</h3>
 
+
+
+	</div>
 
 </body>
 </html>
