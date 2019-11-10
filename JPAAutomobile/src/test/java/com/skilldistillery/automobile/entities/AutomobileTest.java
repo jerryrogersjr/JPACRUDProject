@@ -24,7 +24,7 @@ class AutomobileTest {
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		emf = Persistence.createEntityManagerFactory("JPACars");
+		emf = Persistence.createEntityManagerFactory("JPAAutomobile");
 	}
 
 	@AfterAll

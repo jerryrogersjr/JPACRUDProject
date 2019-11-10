@@ -22,11 +22,7 @@ public class AutomobileDAOImpl implements AutomobileDAO {
 		return em.find(Automobile.class, id);
 	}
 
-	@Override
-	public List<Automobile> findAll() {
-		String sql = "SELECT cars From Cars cars";
-		return em.createQuery(sql, Automobile.class).getResultList();
-	}
+	
 
 	@Override
 	public Automobile findCarByKeyword(String keyword) {
@@ -50,6 +46,13 @@ public class AutomobileDAOImpl implements AutomobileDAO {
 	public Automobile updateCar(Automobile car) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+
+	@Override
+	public List<Automobile> findAll() {
+		return em.createQuery("select c from Automobile c", Automobile.class).getResultList();
 	}
 
 }

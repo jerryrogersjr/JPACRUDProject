@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan("com.skilldillery.jpaautomobile")
+@EntityScan("com.skilldistillery.jpaautomobile")
 public class AutomobileApplication {
 
 	public static void main(String[] args) {
@@ -13,3 +13,5 @@ public class AutomobileApplication {
 	}
 
 }
+
+

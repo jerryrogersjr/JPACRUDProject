@@ -21,7 +21,9 @@ public class AutomobileControlller {
 
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public String index(Model model) {
-		List<Automobile> cars = carDAO.findAll();
+		System.err.println("***in index in controller");
+//		List<Automobile> cars = carDAO.findAll();
+		Automobile cars = carDAO.findCarById(1);
 		model.addAttribute("cars", cars);
 		return "WEB-INF/index.jsp";
 		// return "index"; // if using a ViewResolver.
@@ -29,14 +31,21 @@ public class AutomobileControlller {
 
 	@RequestMapping(path = "getCars.do", method = RequestMethod.GET)
 	public ModelAndView getCar(@RequestParam("id") int id) {
+		System.err.println("***in getCar in controller");
+
 		ModelAndView mv = new ModelAndView();
 		Automobile car = carDAO.findCarById(id);
-		mv.addObject("cars", car);
+		mv.addObject("car", car);
 		mv.setViewName("WEB-INF/cars/show.jsp");
 
 		return mv;
 
 	}
+	
+//	@RequestMapping(path = "getCars.do", method = RequestMethod.GET)
+//	public ModelAndView getAllCars() {
+//		
+//	}
 	
 	
 
