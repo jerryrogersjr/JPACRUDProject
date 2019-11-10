@@ -10,17 +10,17 @@
 <body>
 
 	<h3>Show Cars by ID</h3>
-	<!-- <form action="getCars.do" method="GET">
+	<form action="getCars.do" method="GET">
 		<input type="text" name="id" /> <input type="submit" value="Show Car" />
 	</form>
 	<hr>
- --><%-- 	<c:if test="${not empty cars }">
+ <c:if test="${not empty cars }">
 	<ul>
 	<c:forEach var="car" items="${cars}">
 		<li><a href="getCars.do?id=${car.id }">${car.makeModel}</a> </li>
 	</c:forEach>
 	</ul>
-	</c:if> --%>
+	</c:if> 
 	
 	<hr>
 </body>

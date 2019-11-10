@@ -41,10 +41,7 @@ public class AutomobileControlller {
 
 	}
 	
-//	@RequestMapping(path = "getCars.do", method = RequestMethod.GET)
-//	public ModelAndView getAllCars() {
-//		
-//	}
+
 	
 	
 

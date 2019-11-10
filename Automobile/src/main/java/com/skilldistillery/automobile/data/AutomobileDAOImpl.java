@@ -14,7 +14,7 @@ import com.skilldistillery.automobile.entities.Automobile;
 @Service // allow Spring Boot to create the D A O bean
 public class AutomobileDAOImpl implements AutomobileDAO {
 
-	@PersistenceContext // allows Spring Boot to autowire this EntityManager
+	@PersistenceContext // allows Spring Boot to a u to wire this EntityManager
 	private EntityManager em;
 
 	@Override
@@ -23,6 +23,11 @@ public class AutomobileDAOImpl implements AutomobileDAO {
 	}
 
 	
+	@Override
+	public List<Automobile> findAll() {
+		
+		return em.createQuery("SELECT cars FROM Automobile cars", Automobile.class).getResultList();
+	}
 
 	@Override
 	public Automobile findCarByKeyword(String keyword) {
@@ -50,9 +55,5 @@ public class AutomobileDAOImpl implements AutomobileDAO {
 
 
 
-	@Override
-	public List<Automobile> findAll() {
-		return em.createQuery("select c from Automobile c", Automobile.class).getResultList();
-	}
 
 }
