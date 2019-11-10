@@ -14,14 +14,21 @@
 		<input type="text" name="id" /> <input type="submit" value="Show Car" />
 	</form>
 	<hr>
- <c:if test="${not empty cars }">
-	<ul>
-	<c:forEach var="car" items="${cars}">
-		<li><a href="getCars.do?id=${car.id }">${car.makeModel}</a> </li>
-	</c:forEach>
-	</ul>
-	</c:if> 
-	
+	<form action="addCar.do" method="POST">
+	<input type="submit" value="Add Car">
+	</form>
+	<hr>
+	<form action="updateCar.do">
+	<input type="submit" value="Update Car">
+	</form>
+	<c:if test="${not empty cars }">
+		<ul>
+			<c:forEach var="car" items="${cars}">
+				<li><a href="getCars.do?id=${car.id }">${car.makeModel}</a></li>
+			</c:forEach>
+		</ul>
+	</c:if>
+
 	<hr>
 </body>
 </html>

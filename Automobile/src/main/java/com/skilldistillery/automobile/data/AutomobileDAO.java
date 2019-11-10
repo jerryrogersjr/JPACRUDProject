@@ -14,7 +14,7 @@ public interface AutomobileDAO {
 	
 	public Automobile deleteCar(Automobile car);
 	
-	public Automobile updateCar(Automobile car);
+	public Automobile updateCar(Automobile car, int id);
 	
 	public List<Automobile> findAll();
 }

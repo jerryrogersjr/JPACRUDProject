@@ -41,6 +41,24 @@ public class AutomobileControlller {
 
 	}
 	
+	@RequestMapping(path = "addCar.do", method = RequestMethod.POST)
+	public ModelAndView addCar(Automobile car) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("car", carDAO.addCar(car));
+		mv.setViewName("WEB-INF/cars/add.jsp");
+		return mv;
+		
+	}
+	
+	@RequestMapping(path = "updateCar.do", method = RequestMethod.POST)
+	public ModelAndView updateCar(Automobile car, int id) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("car", carDAO.updateCar(car, id));
+		mv.setViewName("WEB-INF/cars/update.jsp");
+		return mv;
+	}
+		
+	
 
 	
 	

@@ -12,7 +12,18 @@
 
 	<div>
 		<h3>
-			<strong>Car </strong>${car.makeModel}(Origin : ${car.origin})
+			<strong>Selected Vehicle </strong>
+			<table>
+				<tr>
+				<td>${car.makeModel}</td>
+				</tr>
+				<tr>
+				<td>Origin : ${car.origin}</td>
+				</tr>
+				<tr>
+				<td>MPG: ${car.mpg}</td>
+				</tr>
+			</table>
 		</h3>
 
 

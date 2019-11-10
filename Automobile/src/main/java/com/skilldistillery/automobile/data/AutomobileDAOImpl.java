@@ -22,11 +22,10 @@ public class AutomobileDAOImpl implements AutomobileDAO {
 		return em.find(Automobile.class, id);
 	}
 
-	
 	@Override
 	public List<Automobile> findAll() {
-		
-		return em.createQuery("SELECT cars FROM Automobile cars", Automobile.class).getResultList();
+		return em.createQuery("SELECT cars FROM Automobile cars ORDER BY cars.makeModel", Automobile.class)
+				.getResultList();
 	}
 
 	@Override
@@ -37,8 +36,9 @@ public class AutomobileDAOImpl implements AutomobileDAO {
 
 	@Override
 	public Automobile addCar(Automobile car) {
-		// TODO Auto-generated method stub
-		return null;
+		em.persist(car);
+		em.flush();
+		return car;
 	}
 
 	@Override
@@ -48,12 +48,17 @@ public class AutomobileDAOImpl implements AutomobileDAO {
 	}
 
 	@Override
-	public Automobile updateCar(Automobile car) {
-		// TODO Auto-generated method stub
-		return null;
+	public Automobile updateCar(Automobile car, int id) {
+		Automobile carUpdate = em.find(Automobile.class, id);
+		carUpdate.setMakeModel(car.getMakeModel());
+		carUpdate.setMpg(car.getMpg());
+		carUpdate.setCylinders(car.getCylinders());
+		carUpdate.setDisplacement(car.getDisplacement());
+		carUpdate.setHorsepower(car.getHorsepower());
+		carUpdate.setWeight(car.getWeight());
+		carUpdate.setAcceleration(car.getAcceleration());
+		carUpdate.setYear(car.getYear());
+		return carUpdate;
 	}
-
-
-
 
 }
