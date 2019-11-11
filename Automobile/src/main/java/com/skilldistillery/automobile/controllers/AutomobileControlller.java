@@ -71,16 +71,19 @@ public class AutomobileControlller {
 	}
 
 	@RequestMapping(path = "updateCar.do", method = RequestMethod.POST)
-	public String updateCar(Model model, Automobile car) {
+	public ModelAndView updateCar(Model model, Automobile car) {
+		ModelAndView mv = new ModelAndView();
 		Automobile updatedCar = carDAO.updateCar(car);
 		model.addAttribute("car", updatedCar);
-		return "WEB-INF/cars/show.jsp";
+		mv.addObject("car", updatedCar);
+		mv.setViewName("WEB-INF/cars.show.jsp");
+		return mv;
 	}
 
 	@RequestMapping(path = "deleteCar.do", method = RequestMethod.POST)
 	public String deletCar(Model model, int id) {
 		if (carDAO.deleteCar(id)) {
-			return "WEB-INF/index.jsp";
+			return "WEB-INF/show.jsp";
 		} else {
 			model.addAttribute("car", carDAO.findCarById(id));
 			return "WEB-INF/cars/show.jsp";
@@ -92,7 +95,7 @@ public class AutomobileControlller {
 		ModelAndView mv = new ModelAndView();
 		List<Automobile> cars = carDAO.findAll();
 		mv.addObject("cars", cars);
-		mv.setViewName("WEB-INF/cars/showList.jsp");
+		mv.setViewName("WEB-INF/cars/showlist.jsp");
 		return mv;
 
 	}
