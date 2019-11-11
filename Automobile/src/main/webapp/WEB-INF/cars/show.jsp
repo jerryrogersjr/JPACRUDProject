@@ -32,7 +32,7 @@
 
 
 			<form action="updateCar.do" method="POST">
-				<label for="carId"></label> <input type="hidden" value="${car.id }"
+				<label for="id"></label> <input type="hidden" value="${car.id }"
 					name="id"> <label for="carId">Car Id:</label> <input
 					type="text" value="${car.id}" name="carId" disabled="disabled">
 				<br> <label for="makeModel">Make / Model</label> <input

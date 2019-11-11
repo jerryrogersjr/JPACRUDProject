@@ -49,19 +49,19 @@ public class AutomobileDAOImpl implements AutomobileDAO {
 	}
 
 	@Override
-	public Automobile updateCar(Automobile car) {
-		Automobile carUpdate = em.find(Automobile.class, car.getId());
-		carUpdate.setMakeModel(car.getMakeModel());
-		carUpdate.setMpg(car.getMpg());
-		carUpdate.setCylinders(car.getCylinders());
-		carUpdate.setDisplacement(car.getDisplacement());
-		carUpdate.setHorsepower(car.getHorsepower());
-		carUpdate.setWeight(car.getWeight());
-		carUpdate.setAcceleration(car.getAcceleration());
-		carUpdate.setYear(car.getYear());
+	public Automobile updateCar(Automobile updatedCar) {
+		Automobile managed = em.find(Automobile.class, updatedCar.getId());
+		managed.setMakeModel(updatedCar.getMakeModel());
+		managed.setMpg(updatedCar.getMpg());
+		managed.setCylinders(updatedCar.getCylinders());
+		managed.setDisplacement(updatedCar.getDisplacement());
+		managed.setHorsepower(updatedCar.getHorsepower());
+		managed.setWeight(updatedCar.getWeight());
+		managed.setAcceleration(updatedCar.getAcceleration());
+		managed.setYear(updatedCar.getYear());
 //		em.persist(carUpdate);
 //		em.merge(carUpdate);
-		return carUpdate;
+		return managed;
 	}
 
 

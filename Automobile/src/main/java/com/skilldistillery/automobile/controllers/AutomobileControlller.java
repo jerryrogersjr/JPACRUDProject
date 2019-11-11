@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -71,19 +73,28 @@ public class AutomobileControlller {
 	}
 
 	@RequestMapping(path = "updateCar.do", method = RequestMethod.POST)
-	public ModelAndView updateCar(Model model, Automobile car) {
+	public ModelAndView updateCar(Automobile updatedCar) {
 		ModelAndView mv = new ModelAndView();
-		Automobile updatedCar = carDAO.updateCar(car);
-		model.addAttribute("car", updatedCar);
-		mv.addObject("car", updatedCar);
+		Automobile car = carDAO.updateCar(updatedCar);
+		mv.addObject("car", car);
 		mv.setViewName("WEB-INF/cars.show.jsp");
 		return mv;
 	}
+	
+//	@RequestMapping(path = "updateCar.do", method = RequestMethod.POST)
+//	public void updateCar(@PathVariable int id, @RequestBody Automobile car) {
+//		Automobile carUpdated = carDAO.findCarById(id);
+//		if (carUpdated == null) {
+//			throw new IllegalAccessException("no car with id" + id);
+//		}
+//		carDAO.updateCar(carUpdated);
+//		em.
+//	}
 
 	@RequestMapping(path = "deleteCar.do", method = RequestMethod.POST)
 	public String deletCar(Model model, int id) {
 		if (carDAO.deleteCar(id)) {
-			return "WEB-INF/show.jsp";
+			return "WEB-INF/index.jsp";
 		} else {
 			model.addAttribute("car", carDAO.findCarById(id));
 			return "WEB-INF/cars/show.jsp";
