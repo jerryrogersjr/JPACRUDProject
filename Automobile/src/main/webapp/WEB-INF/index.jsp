@@ -5,30 +5,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Automobile-DB</title>
 </head>
 <body>
+	<div>
+		<h3>Automobiles</h3>
+		<hr>
+		<div>
+			<h4>Find Car By Id</h4>
+			<form action="getCars.do" method="GET">
+				<input type="text" name="id" /> <input type="submit"
+					value="Find Car" />
+			</form>
+		</div>
+		<hr>
+		<div>
+			<h4>Show List of Cars</h4>
+			<div>
+				<form action="listCars.do" method="GET">
+					<input type="submit" value="Show Cars" />
+				</form>
+			</div>
+			<hr>
+			<div>
+				<h4>Add New Car</h4>
+				<form action="addCar.do" method="GET">
+					<input type="submit" value="Add Car" />
+				</form>
+			</div>
+		</div>
+	</div>
 
-	<h3>Show Cars by ID</h3>
-	<form action="getCars.do" method="GET">
-		<input type="text" name="id" /> <input type="submit" value="Show Car" />
-	</form>
-	<hr>
-	<form action="addCar.do" method="POST">
-	<input type="submit" value="Add Car">
-	</form>
-	<hr>
-	<form action="updateCar.do">
-	<input type="submit" value="Update Car">
-	</form>
-	<c:if test="${not empty cars }">
-		<ul>
-			<c:forEach var="car" items="${cars}">
-				<li><a href="getCars.do?id=${car.id }">${car.makeModel}</a></li>
-			</c:forEach>
-		</ul>
-	</c:if>
-
-	<hr>
 </body>
 </html>
