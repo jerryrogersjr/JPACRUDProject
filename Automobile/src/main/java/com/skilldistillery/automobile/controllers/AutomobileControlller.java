@@ -93,12 +93,14 @@ public class AutomobileControlller {
 
 	@RequestMapping(path = "deleteCar.do", method = RequestMethod.POST)
 	public String deletCar(Model model, int id) {
-		if (carDAO.deleteCar(id)) {
-			return "WEB-INF/index.jsp";
-		} else {
-			model.addAttribute("car", carDAO.findCarById(id));
-			return "WEB-INF/cars/show.jsp";
-		}
+		carDAO.deleteCar(id);
+		return "WEB-INF/index.jsp";
+//		if (carDAO.deleteCar(id)) {
+//			return "WEB-INF/index.jsp";
+//		} else {
+//			model.addAttribute("car", carDAO.findCarById(id));
+//			return "WEB-INF/cars/show.jsp";
+//		}
 	}
 
 	@RequestMapping(path = "listCars.do", method = RequestMethod.GET)

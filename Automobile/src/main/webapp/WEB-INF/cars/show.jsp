@@ -32,32 +32,35 @@
 
 
 			<form action="updateCar.do" method="POST">
-				<label for="id"></label> <input type="hidden" value="${car.id }"
-					name="id"> <label for="carId">Car Id:</label> <input
-					type="text" value="${car.id}" name="carId" disabled="disabled">
-				<br> <label for="makeModel">Make / Model</label> <input
-					type="text" value="${car.makeModel}" name="makeModel"> <br>
-				<label for="mpg">MPG</label> <input type="text" value="${car.mpg}"
-					name="mpg"> <br> <label for="cylinders">Cylinders</label>
-				<input type="text" value="${car.cylinders}" name="cylinders">
-				<br> <label for="displacement">Displacement</label> <input
-					type="text" value="${car.displacement}" name="displacement">
-				<br> <label for="horsepower">Horsepower</label> <input
+				ID: <input
+					type="text" value="${car.id}" name="carId" disabled="disabled"/>
+				<br> 
+				Make / Model: <input
+					type="text" value="${car.makeModel}" name="makeModel"/> <br>
+				MPG: <input type="text" value="${car.mpg}"
+					name="mpg"/> <br> 
+				Cylinders: <input type="text" value="${car.cylinders}" name="cylinders"/>
+				<br> 
+				Displacement: <input
+					type="text" value="${car.displacement}" name="displacement"/>
+				<br> 
+				Horsepower: <input
 					type="text" value="${car.horsepower}" name="horsepower"> <br>
-				<label for="weight">Weight</label> <input type="text"
-					value="${car.weight}" name="weight"> <br> <label
-					for="acceleration">Acceleration</label> <input type="text"
-					value="${car.acceleration}" name="accerleration"> <br>
-				<label for="year">Year</label> <input type="text"
-					value="${car.year}" name="year"> <br> <label
-					for="origin">Origin</label> <input type="text"
-					value="${car.origin}" name="origin"> <br> <input
+				Weight: <input type="text"
+					value="${car.weight}" name="weight"/> <br> 
+				Acceleration: <input type="text"
+					value="${car.acceleration}" name="accerleration"/> <br>
+				Year: <input type="text"
+					value="${car.year}" name="year"/> <br> 
+				Origin <input type="text"
+					value="${car.origin}" name="origin"/> <br> 
+					<input
 					type="submit" value="Update Car">
 			</form>
 
 			<hr>
 			<form action="deleteCar.do" method="POST">
-				<label for="id"></label> <input type="hidden" value="${car.id}"
+				 <input type="hidden" value="${car.id}"
 					name="id"> <br> <input type="submit"
 					value="Delete Car">
 			</form>
