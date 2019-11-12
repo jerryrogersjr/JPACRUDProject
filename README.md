@@ -1,10 +1,10 @@
 ## JPA CRUD Project
 
 ### Overview
-
+*
 ### Topics Covered
 
-### Project Requirements 
+### Project Requirements
 
 ### Technologies Used
 
