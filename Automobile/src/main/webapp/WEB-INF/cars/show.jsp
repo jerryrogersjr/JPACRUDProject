@@ -11,84 +11,116 @@
 	href="https://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/4.3.1/css/bootstrap.css"
 	rel="stylesheet">
 <title>Selected Automobile</title>
+<%@include file="/WEB-INF/nav.jsp"%>
 </head>
 <body>
+	<br>
 	<div align="center">
 		<form action="getCars.do" method="GET">
 			<input type="number" name="id" placeholder="enter car ID"
 				required="required" /> <input type="submit" class="btn btn-primary"
 				value="Search" />
 		</form>
-		</div>
-		<div class=" container form-goup jumbotron">
-			<c:choose>
-				<c:when test="${not empty car }">
-					<h3>
-						<strong>Selected Car</strong>
-					</h3>
+	</div>
+	<div class=" container form-goup jumbotron">
 
-					<ul>
-						<li>ID: ${car.id}</li>
-						<li>Car: ${car.makeModel}</li>
-						<li>MPG: ${car.mpg}</li>
-						<li>Cylinders: ${car.cylinders}</li>
-						<li>Displacement: ${car.displacement}</li>
-						<li>Horsepower: ${car.horsepower}</li>
-						<li>Weight: ${car.weight}</li>
-						<li>Acceleration: ${car.acceleration}</li>
-						<li>Year: ${car.year}</li>
-						<li>Origin: ${car.origin}</li>
-					</ul>
-					<hr>
+		<c:choose>
+			<c:when test="${not empty car }">
 
-					<h3 align="left">Update Automobile</h3>
+				<h3>
+					<strong>Selected Car</strong>
+				</h3>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">Car</th>
+							<th scope="col">MPG</th>
+							<th scope="col">Cylinders</th>
+							<th scope="col">Displacement</th>
+							<th scope="col">Horsepower</th>
+							<th scope="col">Weight</th>
+							<th scope="col">Acceleration</th>
+							<th scope="col">Year</th>
+							<th scope="col">Origin</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">${car.id}</th>
+							<td>${car.makeModel}</td>
+							<td>${car.mpg}</td>
+							<td>${car.cylinders}</td>
+							<td>${car.displacement}</td>
+							<td>${car.horsepower}</td>
+							<td>${car.weight}</td>
+							<td>${car.acceleration}</td>
+							<td>${car.year}</td>
+							<td>${car.origin}</td>
+						</tr>
+					</tbody>
+				</table>
 
+				<hr>
 
-					<form action="updateCar.do" method="POST">
-						<input type="hidden" value="${car.id}" name="id" /> <br>
-						Make / Model: <input type="text" value="${car.makeModel}"
-							name="makeModel" /> <br> MPG: <input type="text"
-							value="${car.mpg}" name="mpg" /> <br> Cylinders: <input
-							type="text" value="${car.cylinders}" name="cylinders" /> <br>
-						Displacement: <input type="text" value="${car.displacement}"
-							name="displacement" /> <br> Horsepower: <input type="text"
-							value="${car.horsepower}" name="horsepower"> <br>
-						Weight: <input type="text" value="${car.weight}" name="weight" />
-						<br> Acceleration: <input type="text"
-							value="${car.acceleration}" name="accerleration" /> <br>
-						Year: <input type="text" value="${car.year}" name="year" /> <br>
-						Origin <input type="text" value="${car.origin}" name="origin" />
-						<br> <input type="submit" value="Update Car">
+				<h3>Update Automobile</h3>
+				<div class=" container form-goup jumbotron">
+					<form action="addCar.do" method="POST">
+						<div>
+							<label for="makeModel">Make and Model</label> <input type="text"
+								class="form-control" name="makeModel" value="${car.makeModel}" /><br>
+							<label for="mpg">Miles Per Gallon (mpg)</label> <input
+								type="number" class="form-control" name="mpg" value="${car.mpg}" /><br>
+							<label for="cylinders">Total Cylinders</label> <input
+								type="number" class="form-control" name="cylinders"
+								value="${car.cylinders}" /><br> <label for="displacement">Displacement</label>
+							<input type="number" class="form-control" name="displacement"
+								value="${car.displacement}" /><br> <label for="horsepower">Horsepower</label>
+							<input type="number" class="form-control" name="horsepower"
+								value="${car.horsepower}" /><br> <label for="weight">Weight</label>
+							<input type="number" class="form-control" name="weight"
+								value="${car.weight}" /><br> <label for="acceleration">Acceleration</label>
+							<input type="number" class="form-control" name="acceleration"
+								value="${car.acceleration}" /><br> <label for="year">Year</label>
+							<input type="number" class="form-control" name="year"
+								value="${car.year}" /><br> <label for="origin">Origin</label>
+							<input type="text" class="form-control" name="origin"
+								value="${car.origin}" /><br>
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
 					</form>
+				</div>
 
-					<hr>
-					<div align="center">
-						<form action="deleteCar.do" method="POST">
-							<input type="hidden" value="${car.id}" name="id"> <br>
-							<input class="btn btn-danger" type="button" value="Delete Car">
-						</form>
-					</div>
-				</c:when>
-				<c:otherwise><h4 align="center">Automobile Not Found</h4></c:otherwise>
-			</c:choose>
-		</div>
-		<br>
-		<footer class="text-center">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<p>Copyright © theRealMrRogers. All rights reserved.</p>
-					</div>
+				<hr>
+				<div align="center">
+					<form action="deleteCar.do" method="POST">
+						<input type="hidden" value="${car.id}" name="id"> <br>
+						<input class="btn btn-danger" type="submit" value="Delete Car">
+					</form>
+				</div>
+			</c:when>
+			<c:otherwise>
+				<h4 align="center">Automobile Not Found</h4>
+			</c:otherwise>
+		</c:choose>
+	</div>
+	<br>
+	<footer class="text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<p>Copyright © theRealMrRogers. All rights reserved.</p>
 				</div>
 			</div>
-		</footer>
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script
-			src="https://cdn.jsdelivr.net/webjars/org.webjars.bower/jquery/3.3.1/dist/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script
-			src="https://cdn.jsdelivr.net/webjars/org.webjars/popper.js/1.15.0/popper.min.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/4.3.1/js/bootstrap.js"></script>
+		</div>
+	</footer>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="https://cdn.jsdelivr.net/webjars/org.webjars.bower/jquery/3.3.1/dist/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script
+		src="https://cdn.jsdelivr.net/webjars/org.webjars/popper.js/1.15.0/popper.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/4.3.1/js/bootstrap.js"></script>
 </body>
 </html>

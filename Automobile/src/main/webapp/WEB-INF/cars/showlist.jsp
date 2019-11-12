@@ -12,9 +12,10 @@
 	href="https://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/4.3.1/css/bootstrap.css"
 	rel="stylesheet">
 <title>Automobile Data</title>
+<%@include file="/WEB-INF/nav.jsp"%>
 </head>
 <body>
-
+	<br>
 
 	<div align="center">
 		<div class="btn-group" role="group" align="center">

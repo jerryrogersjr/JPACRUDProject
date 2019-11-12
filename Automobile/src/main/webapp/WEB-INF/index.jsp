@@ -11,37 +11,42 @@
 	href="https://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/4.3.1/css/bootstrap.css"
 	rel="stylesheet">
 <title>Automobile-DB</title>
+<%@include file="/WEB-INF/nav.jsp"%>
 </head>
 <body>
-	<div>
-		<h3>Automobiles</h3>
+	<br>
+	<div class="container jumbotron">
+	
+	<h1 align="center"><strong>JPA CRUD Project</strong></h1>
+	<br>
+	<p align="center">This project was an individual project with a focus on deployment to AWS (Amazon Web Services) 
+	using CRUD (create, read, update, destroy) with a simple database. The database is some general data on vehicles.</p>
+		<br>
+	<p align="center"><strong><em>Begin Your Exploration Below</em></strong></p>
+	</div>
+	<div class="container p-3 mb-2 bg-light text-dark">
+		<h3 align="center">Automobiles</h3>
 		<hr>
-		<div>
-			<h4>Find Car By Id</h4>
+		<div align="center">
+			<h4>Find Cars by ID Number</h4>
 			<form action="getCars.do" method="GET">
-				<input type="text" name="id" /> <input type="submit"
-					value="Find Car" />
+				<input type="number" name="id" placeholder="enter car ID"
+					required="required" /> <input type="submit"
+					class="btn btn-primary" value="Search" />
 			</form>
 		</div>
 		<hr>
 		<div>
-			<h4>Show List of Cars</h4>
-			<div>
+			<div align="center">
+				<h4>Show Full List of Cars</h4>
 				<form action="listCars.do" method="GET">
-					<input type="submit" value="Show Cars" />
-				</form>
-			</div>
-			<hr>
-			<div>
-				<h4>Add New Car</h4>
-				<form action="addCar.do" method="GET">
-					<input type="submit" value="Add Car" />
+					<input type="submit" class="btn btn-primary" value="List Cars" />
 				</form>
 			</div>
 		</div>
 	</div>
 	<hr>
-		<footer class="text-center">
+	<footer class="text-center">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
