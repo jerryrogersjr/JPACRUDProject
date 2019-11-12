@@ -22,7 +22,6 @@ public class AutomobileDAOImpl implements AutomobileDAO {
 		return em.find(Automobile.class, id);
 	}
 
-
 	@Override
 	public List<Automobile> findAll() {
 		return em.createQuery("SELECT cars FROM Automobile cars ORDER BY cars.makeModel", Automobile.class)
@@ -50,7 +49,8 @@ public class AutomobileDAOImpl implements AutomobileDAO {
 
 	@Override
 	public Automobile updateCar(Automobile updatedCar, int carId) {
-		Automobile managed = em.find(Automobile.class, carId); // explicitely sending in the car id otherwise comes in null. This was my update hangup. 
+		Automobile managed = em.find(Automobile.class, carId); // explicitely sending in the car id otherwise comes in
+																// null. This was my update hangup.
 		System.err.println("********************************************");
 		System.out.println(updatedCar);
 		System.out.println(managed);
@@ -66,6 +66,5 @@ public class AutomobileDAOImpl implements AutomobileDAO {
 //		em.merge(carUpdate);
 		return managed;
 	}
-
 
 }

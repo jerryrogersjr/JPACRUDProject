@@ -16,13 +16,19 @@
 <body>
 	<br>
 	<div class="container jumbotron">
-	
-	<h1 align="center"><strong>JPA CRUD Project</strong></h1>
-	<br>
-	<p align="center">This project was an individual project with a focus on deployment to AWS (Amazon Web Services) 
-	using CRUD (create, read, update, destroy) with a simple database. The database is some general data on vehicles.</p>
+
+		<h1 align="center">
+			<strong>JPA CRUD Project</strong>
+		</h1>
 		<br>
-	<p align="center"><strong><em>Begin Your Exploration Below</em></strong></p>
+		<p align="center">This project was an individual project with a
+			focus on deployment to AWS (Amazon Web Services) using CRUD (create,
+			read, update, destroy) with a simple database. The database is some
+			general data on vehicles.</p>
+		<br>
+		<p align="center">
+			<strong><em>Begin Your Exploration Below</em></strong>
+		</p>
 	</div>
 	<div class="container p-3 mb-2 bg-light text-dark">
 		<h3 align="center">Automobiles</h3>
