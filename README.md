@@ -58,8 +58,9 @@ could be better, but with practice. On the database side, I imported
 a list of vehicles via CSV. The biggest challenge that I saw that could
 be an issue in the future is matching up the data to the table. For example,
 my database table has a column for the vehicle Id which I wanted to leave
-blank on the database and allow it to auto increment. And I also wanted
-the Id in the first position, which it is. However, for this project I
+blank on the import and allow it to auto populate and auto increment...
+which it does, but again matching up the data to the tables are key.
+And I also wanted the Id in the first position, which it is. However, for this project I
 did end up hard coding some Id's and cutting my list down. This will not
 be the preferred option in the future Just a learning
 point. Overall, this project was actually a great learning tool in mapping.
