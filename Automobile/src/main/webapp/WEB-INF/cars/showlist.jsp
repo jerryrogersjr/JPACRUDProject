@@ -6,38 +6,74 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link
+	href="https://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/4.3.1/css/bootstrap.css"
+	rel="stylesheet">
 <title>Automobile Data</title>
 </head>
 <body>
-	*add/delete/edit functions to be put here
+<div>
+
+</div>
 	<hr>
 	<div>
 		<c:choose>
 			<c:when test="${not empty cars}">
-				<table>
-					<tr>
-						<td><strong>List of Cars</strong></td>
-					</tr>
+				<h4 align="center">
+					<strong><em>List of Cars</em></strong>
+				</h4>
+				<table class="table table-hover table-bordered table-dark">
+						<thead>
+							<tr>
+								<th scope="col">ID</th>
+								<th scope="col">Car</th>
+								<th scope="col">MPG</th>
+								<th scope="col">Cylinders</th>
+								<th scope="col">Displacement</th>
+								<th scope="col">Horsepower</th>
+								<th scope="col">Weight</th>
+								<th scope="col">0-60 (sec)</th>
+								<th scope="col">Year</th>
+								<th scope="col">Origin</th>
+							</tr>
+						</thead>
 					<c:forEach var="cars" items="${cars}">
+					<tbody>
 						<tr>
-							<td>ID: ${cars.id}</td>
-							<td>Car: <a href="getCars.do?id=${cars.id}">${cars.makeModel}</a></td>
-							<td>MPG: ${cars.mpg}</td>
-							<td>Cylinders: ${cars.cylinders}</td>
-							<td>Displacement: ${car.displacement}</td>
-							<td>Horsepower: ${cars.horsepower}</td>
-							<td>Weight: ${cars.weight}</td>
-							<td>Acceleration: ${cars.acceleration}</td>
-							<td>Year: ${cars.year}</td>
-							<td>Origin: ${cars.origin}</td>
+							<th scope="row">${cars.id}</th>
+							<td><a href="getCars.do?id=${cars.id}">${cars.makeModel}</a></td>
+							<td>${cars.mpg}</td>
+							<td>${cars.cylinders}</td>
+							<td>${cars.displacement}</td>
+							<td>${cars.horsepower}</td>
+							<td>${cars.weight}</td>
+							<td>${cars.acceleration}</td>
+							<td>${cars.year}</td>
+							<td>${cars.origin}</td>
 						</tr>
+						</tbody>
 					</c:forEach>
 				</table>
 			</c:when>
-
 		</c:choose>
-
 	</div>
-
+		<hr>
+	<footer class="text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<p>Copyright © theRealMrRogers. All rights reserved.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="https://cdn.jsdelivr.net/webjars/org.webjars.bower/jquery/3.3.1/dist/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script
+		src="https://cdn.jsdelivr.net/webjars/org.webjars/popper.js/1.15.0/popper.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/4.3.1/js/bootstrap.js"></script>
 </body>
 </html>
