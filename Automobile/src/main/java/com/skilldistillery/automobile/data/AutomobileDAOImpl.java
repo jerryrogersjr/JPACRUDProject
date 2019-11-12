@@ -49,8 +49,11 @@ public class AutomobileDAOImpl implements AutomobileDAO {
 	}
 
 	@Override
-	public Automobile updateCar(Automobile updatedCar) {
-		Automobile managed = em.find(Automobile.class, updatedCar.getId());
+	public Automobile updateCar(Automobile updatedCar, int carId) {
+		Automobile managed = em.find(Automobile.class, carId); // explicitely sending in the car id otherwise comes in null. This was my update hangup. 
+		System.err.println("********************************************");
+		System.out.println(updatedCar);
+		System.out.println(managed);
 		managed.setMakeModel(updatedCar.getMakeModel());
 		managed.setMpg(updatedCar.getMpg());
 		managed.setCylinders(updatedCar.getCylinders());

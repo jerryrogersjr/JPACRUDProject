@@ -23,36 +23,15 @@ public class AutomobileControlller {
 
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public String index(Model model) {
-//		System.err.println("***in index in controller");
-//		List<Automobile> cars = carDAO.findAll();
-//		model.addAttribute("cars", cars);
 		return "WEB-INF/index.jsp";
-		// return "index"; // if using a ViewResolver.
 	}
 
-//	@RequestMapping(path = "getCars.do", method = RequestMethod.GET)
-//	public String getCar(Model model, String cid) {
-//		if (cid.isEmpty()) {
-//			return "WEB-INF/index.jsp";
-//		} else {
-//			Integer id;
-//			try {
-//				id = Integer.parseInt(cid);
-//			} catch (NumberFormatException e) {
-//				return "WEB-INF/index.jsp";
-//			}
-//			Automobile auto = carDAO.findCarById(id);
-//			model.addAttribute("car", auto);
-//			return "WEB-INF/show.jsp";
-//		}
 	@RequestMapping(path = "getCars.do", method = RequestMethod.GET)
 	public ModelAndView getCar(@RequestParam("id") int id) {
-//		System.err.println("***in getCar in controller");
 		ModelAndView mv = new ModelAndView();
 		Automobile car = carDAO.findCarById(id);
 		mv.addObject("car", car);
 		mv.setViewName("WEB-INF/cars/show.jsp");
-
 		return mv;
 
 	}
@@ -73,34 +52,19 @@ public class AutomobileControlller {
 	}
 
 	@RequestMapping(path = "updateCar.do", method = RequestMethod.POST)
-	public ModelAndView updateCar(Automobile updatedCar) {
+	public ModelAndView updateCar(Automobile updatedCar, Integer id) {
+		System.out.println("update car id: " + id);
 		ModelAndView mv = new ModelAndView();
-		Automobile car = carDAO.updateCar(updatedCar);
+		Automobile car = carDAO.updateCar(updatedCar, id);
 		mv.addObject("car", car);
-		mv.setViewName("WEB-INF/cars.show.jsp");
+		mv.setViewName("WEB-INF/cars/show.jsp");
 		return mv;
 	}
-	
-//	@RequestMapping(path = "updateCar.do", method = RequestMethod.POST)
-//	public void updateCar(@PathVariable int id, @RequestBody Automobile car) {
-//		Automobile carUpdated = carDAO.findCarById(id);
-//		if (carUpdated == null) {
-//			throw new IllegalAccessException("no car with id" + id);
-//		}
-//		carDAO.updateCar(carUpdated);
-//		em.
-//	}
 
 	@RequestMapping(path = "deleteCar.do", method = RequestMethod.POST)
-	public String deletCar(Model model, int id) {
+	public String deletCar(int id) {
 		carDAO.deleteCar(id);
 		return "WEB-INF/index.jsp";
-//		if (carDAO.deleteCar(id)) {
-//			return "WEB-INF/index.jsp";
-//		} else {
-//			model.addAttribute("car", carDAO.findCarById(id));
-//			return "WEB-INF/cars/show.jsp";
-//		}
 	}
 
 	@RequestMapping(path = "listCars.do", method = RequestMethod.GET)
@@ -110,6 +74,5 @@ public class AutomobileControlller {
 		mv.addObject("cars", cars);
 		mv.setViewName("WEB-INF/cars/showlist.jsp");
 		return mv;
-
 	}
 }

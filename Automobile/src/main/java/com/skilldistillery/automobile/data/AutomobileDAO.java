@@ -14,7 +14,7 @@ public interface AutomobileDAO {
 
 	public boolean deleteCar(int id);
 
-	public Automobile updateCar(Automobile car);
+	public Automobile updateCar(Automobile car, int carId);
 
 	public List<Automobile> findAll();
 

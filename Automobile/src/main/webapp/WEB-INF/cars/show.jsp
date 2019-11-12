@@ -32,8 +32,8 @@
 
 
 			<form action="updateCar.do" method="POST">
-				ID: <input
-					type="text" value="${car.id}" name="carId" disabled="disabled"/>
+				<input
+					type="hidden" value="${car.id}" name="id"/>
 				<br> 
 				Make / Model: <input
 					type="text" value="${car.makeModel}" name="makeModel"/> <br>
