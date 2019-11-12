@@ -6,58 +6,70 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link
 	href="https://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/4.3.1/css/bootstrap.css"
 	rel="stylesheet">
 <title>Automobile Data</title>
 </head>
 <body>
-<div>
 
-</div>
+
+	<div align="center">
+		<div class="btn-group" role="group" align="center">
+			<form action="addCar.do" method="GET">
+				<input class="btn btn-secondary w-100" type="submit" value="Add Car" />
+			</form>
+
+
+		</div>
+	</div>
+
+
 	<hr>
 	<div>
 		<c:choose>
 			<c:when test="${not empty cars}">
-				<h4 align="center">
+				<h2 align="center">
 					<strong><em>List of Cars</em></strong>
-				</h4>
+				</h2>
 				<table class="table table-hover table-bordered table-dark">
-						<thead>
-							<tr>
-								<th scope="col">ID</th>
-								<th scope="col">Car</th>
-								<th scope="col">MPG</th>
-								<th scope="col">Cylinders</th>
-								<th scope="col">Displacement</th>
-								<th scope="col">Horsepower</th>
-								<th scope="col">Weight</th>
-								<th scope="col">0-60 (sec)</th>
-								<th scope="col">Year</th>
-								<th scope="col">Origin</th>
-							</tr>
-						</thead>
-					<c:forEach var="cars" items="${cars}">
-					<tbody>
+					<thead>
 						<tr>
-							<th scope="row">${cars.id}</th>
-							<td><a href="getCars.do?id=${cars.id}">${cars.makeModel}</a></td>
-							<td>${cars.mpg}</td>
-							<td>${cars.cylinders}</td>
-							<td>${cars.displacement}</td>
-							<td>${cars.horsepower}</td>
-							<td>${cars.weight}</td>
-							<td>${cars.acceleration}</td>
-							<td>${cars.year}</td>
-							<td>${cars.origin}</td>
+							<th scope="col">ID</th>
+							<th scope="col">Car</th>
+							<th scope="col">MPG</th>
+							<th scope="col">Cylinders</th>
+							<th scope="col">Displacement</th>
+							<th scope="col">Horsepower</th>
+							<th scope="col">Weight</th>
+							<th scope="col">0-60 (sec)</th>
+							<th scope="col">Year</th>
+							<th scope="col">Origin</th>
 						</tr>
+					</thead>
+					<c:forEach var="cars" items="${cars}">
+						<tbody>
+							<tr>
+								<th scope="row">${cars.id}</th>
+								<td><a href="getCars.do?id=${cars.id}">${cars.makeModel}</a></td>
+								<td>${cars.mpg}</td>
+								<td>${cars.cylinders}</td>
+								<td>${cars.displacement}</td>
+								<td>${cars.horsepower}</td>
+								<td>${cars.weight}</td>
+								<td>${cars.acceleration}</td>
+								<td>${cars.year}</td>
+								<td>${cars.origin}</td>
+							</tr>
 						</tbody>
 					</c:forEach>
 				</table>
 			</c:when>
 		</c:choose>
 	</div>
-		<hr>
+	<hr>
 	<footer class="text-center">
 		<div class="container">
 			<div class="row">

@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link
 	href="https://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/4.3.1/css/bootstrap.css"
 	rel="stylesheet">
@@ -15,25 +17,40 @@
 	<div>
 		<h3>Build New Car (Add Car)</h3>
 		<br>
-		<div>
+		<div class=" container form-goup jumbotron" >
+	
+
 			<form action="addCar.do" method="POST">
-				Make / Model: <input type="text" name="makeModel"
+			<div>
+			 <label for="makeModel">Make and Model</label>
+				<input type="text" class="form-control" name="makeModel"
 					placeholder="enter make and model" required="required" /><br>
-
-				MPG: <input type="text" name="mpg" required="required" /><br>
-
-				Cylinders: <input type="text" name="cylinders" required="required" /><br>
-
-				Displacement: <input type="text" name="displacement"
-					required="required" /><br> Horsepower: <input type="text"
-					name="horsepower" required="required" /><br> Weight: <input
-					type="text" name="weight" required="required" /><br>
-
-				Acceleration: <input type="text" name="acceleration"
-					required="required" /><br> Year: <input type="text"
-					name="year" required="required" /><br> Origin: <input
-					type="text" name="origin" required="required" /><br> <input
-					class="btn btn-warning" type="submit" value="Add Car" />
+			 <label for="mpg">Miles Per Gallon (mpg)</label>
+				<input type="number" class="form-control" name="mpg"
+					placeholder="enter fuel economy (mpg)" required="required" /><br>
+			 <label for="cylinders">Total Cylinders</label>
+				<input type="number" class="form-control" name="cylinders"
+					placeholder="enter engine cyliner total" required="required" /><br>
+			 <label for="displacement">Displacement</label>
+				<input type="number" class="form-control" name="displacement"
+					placeholder="enter engine displacement" required="required" /><br>
+			 <label for="horsepower">Horsepower</label>
+				<input type="number" class="form-control" name="horsepower"
+					placeholder="enter total horsepower" required="required" /><br>
+			 <label for="weight">Weight</label>
+				<input type="number" class="form-control" name="weight"
+					placeholder="enter vehicle gross weight" required="required" /><br>
+			 <label for="acceleration">Acceleration</label>
+				<input type="number" class="form-control" name="acceleration"
+					placeholder="enter acceleration (0-60 mph)" required="required" /><br>
+			 <label for="year">Year</label>
+				<input type="number" class="form-control" name="year"
+					placeholder="enter year" required="required" /><br>
+			 <label for="origin">Origin</label>
+				<input type="text" class="form-control" name="origin"
+					placeholder="enter origin country" required="required" /><br>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
 		</div>
 	</div>
