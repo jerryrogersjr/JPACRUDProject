@@ -12,13 +12,13 @@ the list, but each vehicle is hyperlinked to its individual data. In
 addition, from the vehicle list page you can add vehicles of choice.
 
 ### Topics Covered
-*Creating a SQL database and subsequent tables.
-*Configuring a JPA project.
-*Mapping Entities to SQL tables.
-*Creating JUnit tests to ensure our JPA mappings are correct.
-*Integrating a Spring MVC project with a JPA project.
-*Performing basic CRUD operations.
-*Deploying an application to AWS
+* Creating a SQL database and subsequent tables.
+* Configuring a JPA project.
+* Mapping Entities to SQL tables.
+* Creating JUnit tests to ensure our JPA mappings are correct.
+* Integrating a Spring MVC project with a JPA project.
+* Performing basic CRUD operations.
+* Deploying an application to AWS
 
 ### Project Requirements
 
@@ -62,4 +62,4 @@ blank on the database and allow it to auto increment. And I also wanted
 the Id in the first position, which it is. However, for this project I
 did end up hard coding some Id's and cutting my list down. This will not
 be the preferred option in the future Just a learning
-point. Overall, this project was actually a great learning tool in mapping. 
+point. Overall, this project was actually a great learning tool in mapping.
