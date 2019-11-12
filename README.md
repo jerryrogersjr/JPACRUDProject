@@ -24,13 +24,13 @@ addition, from the vehicle list page you can add vehicles of choice.
 
 Project pushed to a Github repo named JPACRUDProject. README.md detailing the technologies used as well as the purpose of the application.
 
-*Project utilizes a MySQL database to manipulate data. For this project, only required to have a single table and entity.
+* Project utilizes a MySQL database to manipulate data. For this project, only required to have a single table and entity.
 
-*The MySQL table is mapped to a valid JPA Entity and tested to ensure the mappings are working correctly.
+* The MySQL table is mapped to a valid JPA Entity and tested to ensure the mappings are working correctly.
 
-*A Spring project allows for a user to perform basic CRUD operations on your entity via a web interface.
+* A Spring project allows for a user to perform basic CRUD operations on your entity via a web interface.
 
-*Your project and database are deployed to your AWS instance.
+* Your project and database are deployed to your AWS instance.
 
 ### Technologies Used
 
