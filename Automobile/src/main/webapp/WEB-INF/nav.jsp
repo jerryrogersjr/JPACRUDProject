@@ -10,7 +10,9 @@
 	href="https://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/4.3.1/css/bootstrap.css"
 	rel="stylesheet">
 <nav class="navbar sticky-top navbar-dark bg-dark">
-	<a class="navbar-brand" href="/">Home</a>
+	<a class="navbar-brand" href="http://18.190.114.201:8080/Automobile/">Home</a> <!-- This line works on AWS. Need to 
+	figure out why the home link of index.jsp, index.do, /index.jsp, /index.do doesn't work -->
+	<!-- <a class="navbar-brand" href="/">Home</a> --> <!-- This line works on local machine -->
 </nav>
 <script
 	src="https://cdn.jsdelivr.net/webjars/org.webjars.bower/jquery/3.3.1/dist/jquery.min.js"></script>
