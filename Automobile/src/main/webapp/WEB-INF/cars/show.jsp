@@ -92,12 +92,53 @@
 				</div>
 
 				<hr>
-				<div align="center">
-					<form action="deleteCar.do" method="POST">
-						<input type="hidden" value="${car.id}" name="id"> <br>
-						<input class="btn btn-danger" type="submit" value="Delete Car">
-					</form>
+				<div></div>
+				<!-- Modal Testing Begin -->
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-danger" data-toggle="modal"
+					data-target="#exampleModal">Delete Car</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1"
+					role="dialog" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Delete
+									Confirmation</h5>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<strong>Are you sure that you'd like to delete the
+									selected Automobile?</strong>
+							</div>
+
+							<div class="modal-footer">
+								<form action="deleteCar.do" method="POST">
+									<input type="hidden" value="${car.id}" name="id">
+									<button class="btn btn-danger" type="submit">Delete
+										Car</button>
+								</form>
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Close</button>
+								<!-- <button type="button" class="btn btn-primary">Save
+									changes</button>  -->
+							</div>
+						</div>
+					</div>
 				</div>
+
+				<!-- Modal Testing End -->
+				<%-- 	<div align="center">
+	<form action="deleteCar.do" method="POST">
+			<input type="hidden" value="${car.id}" name="id"> <br> <input
+				class="btn btn-danger" type="submit" value="Delete Car">
+		</form> 
+	</div>  --%>
 			</c:when>
 			<c:otherwise>
 				<h4 align="center">Automobile Not Found</h4>
